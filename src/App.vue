@@ -24,6 +24,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding-top: 60px;
+  height: 100vh;
+}
+
+html body {
+  background: linear-gradient(124deg, #ff240080, #e81d1d80, #e8b71d80, #e3e81d80, #1de84080, #1ddde880, #2b1de880, #dd00f380, #dd00f380);
 }
 </style>

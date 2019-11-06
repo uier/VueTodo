@@ -59,14 +59,18 @@ export default {
       show: true,
       title: ['Todo', 'Completed'],
       items: [
-        [], [], []
+        [], []
       ]
     }
+  },
+  mounted() {
+    if ( localStorage.items )  this.items = JSON.parse(localStorage.items)
+    if ( localStorage.text )  this.text = localStorage.text
   },
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
-      this.items[0].push({data: this.text, timestamp: new Date().toJSON().slice(0,10).replace(/-/g,'/')})
+      this.items[0].push({data: this.text, timestamp: new Date().toLocaleString('zh-TW', {timeZone: 'Asia/Taipei', hour12: false}).slice(0,15)})
       this.text = ''
       this.$refs.getFocus.focus()
       // this.onShow()
@@ -90,7 +94,7 @@ export default {
           this.items[begin^1].push(obj)
         })
       }
-      this.items[begin] = []
+      this.items[begin].splice(0, this.items[begin].length)
       this.onShow()
     },
     onShow() {
@@ -98,6 +102,14 @@ export default {
       this.$nextTick(() => {
         this.show = true
       })
+    }
+  },
+  watch: {
+    text(newText) {
+      localStorage.text = newText
+    },
+    items(newItems) {
+      localStorage.items = JSON.stringify(newItems)
     }
   }
 }
@@ -111,11 +123,15 @@ export default {
 }
 
 .list {
-  height: 60vh;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  max-height: 60vh;
   width: 40vw;
+  background-color: #ffffff80;
 }
 
 .data {
+  min-height: 25vh;
   max-height: 50vh;
   overflow-y: scroll;
 }
