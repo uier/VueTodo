@@ -1,18 +1,16 @@
 <template>
   <div id="app">
-    <Header/>
-    <List/>
+    <Main/>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import List from './components/List.vue'
+import Main from './pages/Main.vue'
 
 export default {
   name: 'app',
   components: {
-    Header, List
+    Main
   }
 }
 </script>
@@ -29,6 +27,6 @@ export default {
 }
 
 html body {
-  background: linear-gradient(124deg, #ff240080, #e81d1d80, #e8b71d80, #e3e81d80, #1de84080, #1ddde880, #2b1de880, #dd00f380, #dd00f380);
+  background-color: #9999ff;
 }
 </style>

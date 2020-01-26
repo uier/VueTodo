@@ -25,8 +25,8 @@
             <div v-if="items[n-1].length===0" class="mt-5 text-muted">Empty</div>
             <!-- for_all button -->
             <b-list-group-item v-if="items[n-1].length>0" class="text-right">
-              <b-button v-if="n===1" @click="RemoveAll(n-1, 1)" variant="outline-success" class="mr-1">Solve all</b-button>
-              <b-button v-else @click="RemoveAll(n-1, 1)" variant="outline-success" class="mr-1">Unsolve all</b-button>
+              <b-button v-if="n===1" @click="RemoveAll(n-1, 1)" variant="outline-success" class="mr-1">Complete all</b-button>
+              <b-button v-else @click="RemoveAll(n-1, 1)" variant="outline-success" class="mr-1" v-b-tooltip.hover title="Resume all to Todo">Resume all</b-button>
               <b-button @click="RemoveAll(n-1, 2)" variant="outline-danger">Remove all</b-button>
             </b-list-group-item>
             <!-- todo info -->
@@ -36,9 +36,9 @@
               </b-col>
               <!-- solve & remove button -->
               <b-col cols="4" class="text-right p-0 ">
-                <b-button v-if="n===1" @click="Remove(index, n-1, 1)" variant="outline-success" class="mr-1"><font-awesome-icon icon="check" /></b-button>
-                <b-button v-else @click="Remove(index, n-1, 1)" variant="outline-success" class="mr-1"><font-awesome-icon icon="reply" /></b-button>
-                <b-button @click="Remove(index, n-1, 2)" variant="outline-danger"><font-awesome-icon icon="trash-alt" /></b-button>
+                <b-button v-if="n===1" @click="Remove(index, n-1, 1)" variant="outline-success" class="mr-1" v-b-tooltip.hover title="Complete"><font-awesome-icon icon="check" /></b-button>
+                <b-button v-else @click="Remove(index, n-1, 1)" variant="outline-success" class="mr-1" v-b-tooltip.hover title="Resume"><font-awesome-icon icon="reply" /></b-button>
+                <b-button @click="Remove(index, n-1, 2)" variant="outline-danger" v-b-tooltip.hover title="Remove"><font-awesome-icon icon="trash-alt" /></b-button>
               </b-col>
             </b-list-group-item>
           </b-list-group>
