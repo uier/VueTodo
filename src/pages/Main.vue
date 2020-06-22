@@ -4,15 +4,21 @@
     <List></List>
     <br>
     <Dialog>
-      <b slot="btnText">Tips</b>
-      <h2 slot="header">Tips for VueTodo</h2>
-      <p slot="content">You can Add any Todo from the text input.</p>
-      <p slot="content">cnt: {{ cnt }} (click count to increment)</p>
-      <b-button slot="otherAction" size="sm" variant="danger" @click="increment">
-        Count
-      </b-button>
-      </b>
+      <b slot="btnText">Info</b>
+      <h2 slot="header">Information</h2>
+      <p slot="content">
+        Hi! This is a side project for practicing Vue.js.
+        <br>
+        The data is stored with Local Storage, and will not be cleared after you closing the browser.
+        <br>
+        <br>
+        Developer: TzuWei YU (Uier)
+      </p>
+      <div slot="otherAction"/>
     </Dialog>
+    <br>
+    <!-- Place this tag where you want the button to render. -->
+    <a class="github-button" href="https://github.com/Uier/VueTodo" data-size="large" data-icon="octicon-star" data-show-count="true" aria-label="Star Uier/VueTodo on GitHub">Star</a>
 	</div>
 </template>
 
@@ -31,11 +37,6 @@ export default {
     return {
       cnt: 0,
     }
-  },
-  methods: {
-    increment() {
-      this.cnt++;
-    },
   },
 }
 </script>

@@ -16,8 +16,23 @@ export default {
 </script>
 
 <style>
+/*Import local font: huninn*/
+@font-face {
+  font-family: 'jf-openhuninn-1.1';
+  src: url('./assets/fonts/jf-openhuninn-11.eot');
+  src: url('./assets/fonts/jf-openhuninn-11.eot?#iefix') format('embedded-opentype'),
+       url('./assets/fonts/jf-openhuninn-11.woff2') format('woff2'),
+       url('./assets/fonts/jf-openhuninn-11.woff') format('woff'),
+       url('./assets/fonts/jf-openhuninn-11.svg#jf-openhuninn-1.1') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'jf-openhuninn-1.1', 'Avenir', 'Helvetica', 'Arial', sans-serif !important;
+}
+
 #app {
-  font-family: "Avenir", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -27,6 +42,6 @@ export default {
 }
 
 html body {
-  background-color: #9999ff;
+  background-color: #d9d9d9;
 }
 </style>

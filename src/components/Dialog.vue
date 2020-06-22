@@ -18,9 +18,6 @@
       </template>
 
       <template v-slot:modal-footer="{ ok, cancel }">
-        <slot name="footer">
-          <b>Custom Footer</b>
-        </slot>
         <b-button size="sm" variant="success" @click="ok()">
           OK
         </b-button>
